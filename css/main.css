@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('/css/footer.css');
 @import url('/css/header.css');
+@import url('/css/product.css');
 
 /* Variables */
 :root{
@@ -28,7 +29,7 @@ header{
 }
 footer{
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 /* Quitando decoraciones y asignando valores predeterminados */
@@ -38,4 +39,63 @@ a{
 }
 li{
     list-style: none;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 6rem;
+}
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.slider img{
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+    border: 0;
+    border-style: none;
+    border-radius: 10px;
+    background-color: var(--clr-secondary);
+}
+.btn-slider{
+    position:  absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    /* border-radius: 10px; */
+
+}
+.btn-slider img{
+    position: relative;
+    background-color: transparent;
+    filter: invert(0.5);
+    /* border-radius: 10px; */
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+}
+
+.slider .back{
+    left: 0;
+}
+.slider .next{
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.ofertas {
+    height: 100vh;
+}
+.clr-secondary{
+    background-color: var(--clr-secondary);
+}
+.clr-alert{
+    background-color: var(--clr-alertr);
 }
