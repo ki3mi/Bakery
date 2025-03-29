@@ -1,0 +1,43 @@
+/* COLORS
+    --clr-bg: #f3dbbd;
+    --clr-primary: #100200;
+    --clr-secondary: #EEE7DC;
+    --clr-alert: #6E422F;
+*/
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-container img{
+    width: 6rem;
+}
+
+.navBar{
+    /* background-color: var(--clr-secondary); */
+    color: var(--clr-primary);
+}
+
+.options{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+
+}
+
+.link{
+    list-style: none;
+    font-weight: bolder;
+}
+
+.link a{
+    color: var(--clr-primary);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+}
+
+.link a:hover{
+    background-color: var(--clr-alert);
+    color: var(--clr-secondary);
+}

@@ -1,0 +1,46 @@
+/* COLORS
+    --clr-bg: #f3dbbd;
+    --clr-primary: #100200;
+    --clr-secondary: #EEE7DC;
+    --clr-alert: #6E422F;
+*/
+
+.footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--clr-secondary);
+    background-color: var(--clr-alert);
+}
+.footer-container img{
+    width: 10rem;
+}
+
+.footer-information{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.footer-information .title{
+    font-weight: bold;
+}
+.footer-section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.footer-section li{
+    font-weight: 200;
+}
+.footer-section .logo-container{
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+.footer-section img{
+    width: 1.2rem;
+    height: 1.2rem;
+    filter: invert(1);
+}
