@@ -1,3 +1,4 @@
+
 // Elementos
 const slider = document.getElementById("slider")
 
@@ -6,7 +7,7 @@ function cargarComponente(id, url){
     fetch(url)
         .then(res => res.text())
         .then(data => {
-            document.getElementById(id).innerHTML = data
+            document.getElementById(id).innerHTML += data
         })
         .catch(error => console.log("Error al cargar " + url, error))
 }
@@ -15,8 +16,8 @@ function cargarComponente(id, url){
 document.addEventListener("DOMContentLoaded", () => {
     cargarComponente("header", "components/header.html")
     cargarComponente("footer", "components/footer.html")
+    cargarComponente("secOfert", "components/product.html")
 })
-
 slider.addEventListener("click", (e) => {
     const btn = e.target.closest("button")
     console.log(btn.className);
