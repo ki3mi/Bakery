@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarComponente("header", "components/header.html")
     cargarComponente("footer", "components/footer.html")
     cargarComponente("secOfert", "components/product.html")
+    cargarComponente("secOfert", "components/product.html")
 })
 slider.addEventListener("click", (e) => {
     const btn = e.target.closest("button")
