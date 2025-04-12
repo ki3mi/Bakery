@@ -1,0 +1,78 @@
+[
+    {
+        "id" : 0,
+        "name" : "Producto 1",
+        "price" : 100,
+        "img" : "/img/img.png"
+
+    },
+    {
+        "id" : 1,
+        "name" : "Pan",
+        "price" : 1050,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 2,
+        "name" : "Producto 3",
+        "price" : 1000,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 3,
+        "name" : "Producto 1",
+        "price" : 100,
+        "img" : "/img/img.png"
+
+    },
+    {
+        "id" : 4,
+        "name" : "Producto 2",
+        "price" : 1050,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 5,
+        "name" : "Producto 3",
+        "price" : 1000,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 6,
+        "name" : "Producto 1",
+        "price" : 100,
+        "img" : "/img/img.png"
+
+    },
+    {
+        "id" : 7,
+        "name" : "Producto 2",
+        "price" : 1050,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 8,
+        "name" : "Producto 3",
+        "price" : 1000,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 9,
+        "name" : "Producto 1",
+        "price" : 100,
+        "img" : "/img/img.png"
+
+    },
+    {
+        "id" : 10,
+        "name" : "Producto 2",
+        "price" : 1050,
+        "img" : "/img/img.png"
+    },
+    {
+        "id" : 11,
+        "name" : "Producto 3",
+        "price" : 1000,
+        "img" : "/img/img.png"
+    }
+]

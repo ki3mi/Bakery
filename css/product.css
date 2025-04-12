@@ -11,6 +11,9 @@
     border-color: var(--clr-alert);
     width: 15rem;
 }
+.product img{
+    width: 200px;
+}
 .amount{
     display: flex;
     gap: 2px;
@@ -43,9 +46,12 @@
 .options button{
     width: 100%;
     background-color: var(--clr-alert);
-    border: 1px none;
-    border-radius: 5px;
+    border: 1px solid;
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     color: var(--clr-secondary);
+    transition: background-color 0.5s, color 0.5s;
 }
 .options button:hover{
     border: 1px solid;

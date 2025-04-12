@@ -1,0 +1,79 @@
+/* COLORS
+--clr-bg: #f3dbbd;
+--clr-primary: #100200;
+--clr-secondary: #EEE7DC;
+--clr-alert: #6E422F; 
+*/
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.filters{
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-left: 20px;
+    width: 20%;
+}
+.filters .filterOp{
+    display: flex;
+    flex-direction: column;
+}
+/* BARRA DE BÚSQUEDA */
+.searchSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+#btn-clearSearch{
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 4px;
+    background-color: var(--clr-alert);
+    color: var(--clr-secondary);
+    border: solid 1px;
+    border-color: var(--clr-alert);
+    border-radius: 10px;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+#btn-clearSearch:hover{
+    background-color: var(--clr-bg);
+    color: var(--clr-alert);
+}
+.searchBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.searchBar input{
+    width: 100%;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--clr-bg);
+    border-color: var(--clr-alert);
+    border-radius: 10px;
+}
+#searchBar input:focus{
+    border-color: var(--clr-alert);
+}
+
+/* SECCIÓN DE PRODUCTOS */
+#productSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 10px;
+}
+

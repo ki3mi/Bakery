@@ -1,7 +1,21 @@
 // Función para aumentar / disminuir cantidad
 
-// NOTA : ARREGLAR EL ERROR DE EVENT. Que solo detecte el producto
-document.addEventListener("click", (e)=>{
+function renderProduct(id, url, product){    
+    const container = document.getElementById(id)
+    fetch(url)
+        .then(res => res.text())
+        .then(data => {
+            container.innerHTML += data
+            const component = container.lastElementChild            
+            component.id = product.id
+            component.children[0].textContent = product.name
+            component.children[1].src = product.img
+            component.children[2].textContent = product.price
+        })
+        .catch(error => console.log("Error al cargar el Producto" + url, error))
+}
+
+function modifyQuantity(e){
     const input = e.target.closest("div").children[1]
     switch(e.target.className){
         case "add":
@@ -13,4 +27,13 @@ document.addEventListener("click", (e)=>{
             }
             break
     }
-})
+}
+function getProduct(e){
+    const quantity = Number(e.target.closest("div").children[3].textContent)
+    const id = Number(e.target.closest("div").id)
+    const res = {
+        id : id,
+        quantity : quantity
+    }
+    return res
+}
