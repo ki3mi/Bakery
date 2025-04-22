@@ -6,6 +6,7 @@ const searchBar = document.getElementById("searchBar")
 const productUrl = "../products.json"
 let products = []
 
+// Error en el fetch de los datos, mucha redundancia
 function renderFetchProducts(filtered){
     const containerProduct = document.getElementById("productSection")
     if(filtered != null){
@@ -18,7 +19,9 @@ function renderFetchProducts(filtered){
             .then(res=>res.json())
             .then(data=>{
                 containerProduct.innerHTML = ""
-                products = data
+                products = data                
+            })
+            .then(()=>{
                 products.forEach(product => {
                     renderProduct("productSection", "/components/product.html", product)
                 });
