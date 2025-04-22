@@ -9,24 +9,6 @@ let products = []
 // Unificar el render para que siempre inluya el filtro
 function renderFetchProducts(filter){
     const containerProduct = document.getElementById("productSection")
-    // if(filtered != null){
-    //     filtered.forEach(product => {
-    //         containerProduct.innerHTML = ""
-    //         renderProduct("productSection", "/components/product.html", product)
-    //     })
-    // }else{
-    //     fetch(productUrl)
-    //         .then(res=>res.json())
-    //         .then(data=>{
-    //             containerProduct.innerHTML = ""
-    //             products = data
-    //             products.forEach(product => {
-    //                 renderProduct("productSection", "/components/product.html", product)
-    //             });
-                
-    //         })
-    //         .catch(error => console.log(error))
-    // }
     fetch(productUrl)
         .then(res => res.json())
         .then(data => {
@@ -38,16 +20,6 @@ function renderFetchProducts(filter){
         })
 }
 
-// Función para filtrar productos
-// function filterProducts(text){
-//     let filtered = []
-//     fetch(productUrl)
-//         .then(res=>res.json())
-//         .then(data => {
-//             filtered = data.filter(product => product.name.toLowerCase().includes(text))
-//             renderFetchProducts(filtered)
-//         }).catch(error => console.log(error))
-// }
 // Cargar los componentes
 document.addEventListener("DOMContentLoaded", ()=>{
     cargarComponente("header", "/components/header.html")

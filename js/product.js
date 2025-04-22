@@ -1,5 +1,6 @@
 // Función para aumentar / disminuir cantidad
 
+// ERROR ENCONTRADO / AGREGAR EL HTML EN JAVASCRIP Y ENVIARLO TODO COMPLETO PARA RENDERIZAR
 function renderProduct(id, url, product){    
     const container = document.getElementById(id)
     fetch(url)
