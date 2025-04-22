@@ -6,46 +6,54 @@ const searchBar = document.getElementById("searchBar")
 const productUrl = "../products.json"
 let products = []
 
-// Error en el fetch de los datos, mucha redundancia
-function renderFetchProducts(filtered){
+// Unificar el render para que siempre inluya el filtro
+function renderFetchProducts(filter){
     const containerProduct = document.getElementById("productSection")
-    if(filtered != null){
-        filtered.forEach(product => {
+    // if(filtered != null){
+    //     filtered.forEach(product => {
+    //         containerProduct.innerHTML = ""
+    //         renderProduct("productSection", "/components/product.html", product)
+    //     })
+    // }else{
+    //     fetch(productUrl)
+    //         .then(res=>res.json())
+    //         .then(data=>{
+    //             containerProduct.innerHTML = ""
+    //             products = data
+    //             products.forEach(product => {
+    //                 renderProduct("productSection", "/components/product.html", product)
+    //             });
+                
+    //         })
+    //         .catch(error => console.log(error))
+    // }
+    fetch(productUrl)
+        .then(res => res.json())
+        .then(data => {
+            products = data.filter(product => product.name.toLowerCase().includes(filter))
             containerProduct.innerHTML = ""
-            renderProduct("productSection", "/components/product.html", product)
+            products.forEach(product => {
+                renderProduct("productSection", "/components/product.html", product)                
+            });
         })
-    }else{
-        fetch(productUrl)
-            .then(res=>res.json())
-            .then(data=>{
-                containerProduct.innerHTML = ""
-                products = data                
-            })
-            .then(()=>{
-                products.forEach(product => {
-                    renderProduct("productSection", "/components/product.html", product)
-                });
-            })
-            .catch(error => console.log(error))
-    }
 }
 
 // Función para filtrar productos
-function filterProducts(text){
-    let filtered = []
-    fetch(productUrl)
-        .then(res=>res.json())
-        .then(data => {
-            filtered = data.filter(product => product.name.toLowerCase().includes(text))
-            renderFetchProducts(filtered)
-        }).catch(error => console.log(error))
-}
+// function filterProducts(text){
+//     let filtered = []
+//     fetch(productUrl)
+//         .then(res=>res.json())
+//         .then(data => {
+//             filtered = data.filter(product => product.name.toLowerCase().includes(text))
+//             renderFetchProducts(filtered)
+//         }).catch(error => console.log(error))
+// }
 // Cargar los componentes
 document.addEventListener("DOMContentLoaded", ()=>{
     cargarComponente("header", "/components/header.html")
     cargarComponente("footer", "/components/footer.html")
     // Cargar productos del Json
-    renderFetchProducts()
+    renderFetchProducts("")
 })
 
 // Eventos de la sección de productos
@@ -57,11 +65,11 @@ productSection.addEventListener("click", (e)=>{
 // Evento para limpiar la busqueda
 btnClearSearch.addEventListener("click", ()=>{
     searchBar.value = ""
-    filterProducts("")
+    renderFetchProducts("")
 })
 
 // Evento para filtrar los datos
 searchBar.addEventListener("input", ()=>{
     const text = searchBar.value.toLowerCase()
-    filterProducts(text)
+    renderFetchProducts(text)
 })
