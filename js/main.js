@@ -13,12 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarComponente("ofertContainer", "components/product.html")
     
 })
-// Cargar las animaciones principales
-// window.addEventListener("load", () => {
-//     document.querySelectorAll(".fade-in").forEach(element =>{
-//         element.classList.add("show")
-//     })
-// })
 
 // Evento para el slider
 slider.addEventListener("click", (e) => {

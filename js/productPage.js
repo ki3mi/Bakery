@@ -9,14 +9,35 @@ let products = []
 // Unificar el render para que siempre inluya el filtro
 function renderFetchProducts(filter){
     const containerProduct = document.getElementById("productSection")
+    let productHtml = ""
     fetch(productUrl)
         .then(res => res.json())
         .then(data => {
             products = data.filter(product => product.name.toLowerCase().includes(filter))
-            containerProduct.innerHTML = ""
             products.forEach(product => {
-                renderProduct("productSection", "/components/product.html", product)                
-            });
+                productHtml += 
+                "<div class='container product fade-in' id='"+product.id+"'>"+
+                    // <!-- Title -->
+                    "<h1>"+product.name+"</h1>"+
+                    // <!-- img -->
+                    "<img src='"+product.img+"' alt=''>"+
+                    // <!-- Price -->
+                    "<p class='price'>S/. "+product.price+"</p>"+
+                    // <!-- Buttons -->
+                    "<div>"+
+                        "<div class='amount'>"+
+                            "<button class='decrease'>-</button>"+
+                            "<input type='number' value='1' id='amount' disabled>"+
+                            "<button class='add'>+</button>"+
+                        "</div>"+
+                        "<div class='options'>"+
+                            "<button class=''>Añadir al carrito</button>"+
+                        "</div>"+
+                    "</div>"+
+                "</div>"
+                // renderProduct("productSection", "/components/product.html", product)                
+            })
+            containerProduct.innerHTML = productHtml
         })
 }
 
