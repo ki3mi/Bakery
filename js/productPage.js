@@ -2,7 +2,7 @@ const productSection = document.getElementById("productSection")
 const btnClearSearch = document.getElementById("btn-clearSearch")
 const searchBar = document.getElementById("searchBar")
 
-
+// Link de  los productos
 const productUrl = "../products.json"
 let products = []
 
@@ -64,5 +64,6 @@ btnClearSearch.addEventListener("click", ()=>{
 // Evento para filtrar los datos
 searchBar.addEventListener("input", ()=>{
     const text = searchBar.value.toLowerCase()
+
     renderFetchProducts(text)
 })

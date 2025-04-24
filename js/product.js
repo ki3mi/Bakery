@@ -1,13 +1,12 @@
 // Función para aumentar / disminuir cantidad
 
-// ERROR ENCONTRADO / AGREGAR EL HTML EN JAVASCRIP Y ENVIARLO TODO COMPLETO PARA RENDERIZAR
-function renderProduct(id, url, product){    
+function renderProduct(id, url, product){
     const container = document.getElementById(id)
     fetch(url)
         .then(res => res.text())
         .then(data => {
             container.innerHTML += data
-            const component = container.lastElementChild            
+            const component = container.lastElementChild
             component.id = product.id
             component.children[0].textContent = product.name
             component.children[1].src = product.img

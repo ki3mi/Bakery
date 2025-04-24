@@ -18,10 +18,7 @@
     padding-left: 20px;
     width: 20%;
 }
-.filters .filterOp{
-    display: flex;
-    flex-direction: column;
-}
+
 /* BARRA DE BÚSQUEDA */
 .searchSection{
     display: flex;
@@ -64,6 +61,18 @@
     border-color: var(--clr-alert);
 }
 
+/* FILTROS */
+.filters .filterOp{
+    display: flex;
+    font-size: large;
+    flex-direction: column;
+}
+.opCheckbox{
+    margin: 0 4px 0 4px;
+}
+.opRange{
+    width: 10rem;
+}
 /* SECCIÓN DE PRODUCTOS */
 #productSection{
     display: flex;

@@ -1,78 +1,137 @@
 [
     {
-        "id" : 0,
-        "name" : "Producto 1",
-        "price" : 100,
-        "img" : "/img/img.png"
-
+        "id": 0,
+        "name": "Pan Integral",
+        "price": 4.50,
+        "img": "/img/img.png",
+        "category": "Panadería",
+        "flourType": "Harina integral",
+        "ingredients": ["Harina integral", "Agua", "Sal marina", "Levadura seca", "Aceite de oliva"]
     },
     {
-        "id" : 1,
-        "name" : "Pan",
-        "price" : 1050,
-        "img" : "/img/img.png"
+        "id": 1,
+        "name": "Croissant",
+        "price": 6.00,
+        "img": "/img/img.png",
+        "category": "Repostería",
+        "flourType": "Harina de trigo refinada",
+        "ingredients": ["Harina", "Mantequilla", "Leche", "Azúcar", "Sal", "Levadura"]
     },
     {
-        "id" : 2,
-        "name" : "Producto 3",
-        "price" : 1000,
-        "img" : "/img/img.png"
+        "id": 2,
+        "name": "Galletas de Avena",
+        "price": 3.00,
+        "img": "/img/img.png",
+        "category": "Galletas",
+        "flourType": "Harina de avena",
+        "ingredients": ["Harina de avena", "Azúcar moreno", "Manteca", "Canela", "Huevo"]
     },
     {
-        "id" : 3,
-        "name" : "Producto 1",
-        "price" : 100,
-        "img" : "/img/img.png"
-
+        "id": 3,
+        "name": "Pan de Centeno",
+        "price": 5.00,
+        "img": "/img/img.png",
+        "category": "Panadería",
+        "flourType": "Harina de centeno",
+        "ingredients": ["Harina de centeno", "Agua", "Sal", "Levadura", "Miel"]
     },
     {
-        "id" : 4,
-        "name" : "Producto 2",
-        "price" : 1050,
-        "img" : "/img/img.png"
+        "id": 4,
+        "name": "Bizcocho de Vainilla",
+        "price": 6.50,
+        "img": "/img/img.png",
+        "category": "Pasteles",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Huevo", "Azúcar", "Vainilla", "Polvo de hornear"]
     },
     {
-        "id" : 5,
-        "name" : "Producto 3",
-        "price" : 1000,
-        "img" : "/img/img.png"
+        "id": 5,
+        "name": "Brownie",
+        "price": 7.00,
+        "img": "/img/img.png",
+        "category": "Repostería",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Cacao", "Mantequilla", "Huevo", "Azúcar"]
     },
     {
-        "id" : 6,
-        "name" : "Producto 1",
-        "price" : 100,
-        "img" : "/img/img.png"
-
+        "id": 6,
+        "name": "Tarta de Manzana",
+        "price": 8.50,
+        "img": "/img/img.png",
+        "category": "Tartas",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Manzana", "Azúcar", "Canela", "Mantequilla"]
     },
     {
-        "id" : 7,
-        "name" : "Producto 2",
-        "price" : 1050,
-        "img" : "/img/img.png"
+        "id": 7,
+        "name": "Empanada de Queso",
+        "price": 4.00,
+        "img": "/img/img.png",
+        "category": "Salados",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Queso", "Huevo", "Manteca", "Sal"]
     },
     {
-        "id" : 8,
-        "name" : "Producto 3",
-        "price" : 1000,
-        "img" : "/img/img.png"
+        "id": 8,
+        "name": "Pan de Molde Blanco",
+        "price": 5.50,
+        "img": "/img/img.png",
+        "category": "Panadería",
+        "flourType": "Harina blanca",
+        "ingredients": ["Harina blanca", "Leche", "Manteca", "Levadura", "Azúcar"]
     },
     {
-        "id" : 9,
-        "name" : "Producto 1",
-        "price" : 100,
-        "img" : "/img/img.png"
-
+        "id": 9,
+        "name": "Muffin de Arándanos",
+        "price": 6.80,
+        "img": "/img/img.png",
+        "category": "Repostería",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Arándanos", "Huevo", "Leche", "Azúcar"]
     },
     {
-        "id" : 10,
-        "name" : "Producto 2",
-        "price" : 1050,
-        "img" : "/img/img.png"
+        "id": 10,
+        "name": "Pan Brioche",
+        "price": 7.50,
+        "img": "/img/img.png",
+        "category": "Panadería",
+        "flourType": "Harina de trigo enriquecida",
+        "ingredients": ["Harina", "Huevos", "Azúcar", "Mantequilla", "Levadura"]
     },
     {
-        "id" : 11,
-        "name" : "Producto 3",
-        "price" : 1000,
-        "img" : "/img/img.png"
+        "id": 11,
+        "name": "Tarta de Limón",
+        "price": 9.00,
+        "img": "/img/img.png",
+        "category": "Tartas",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Limón", "Huevos", "Azúcar", "Manteca"]
+    },
+    {
+        "id": 12,
+        "name": "Pan Sin Gluten",
+        "price": 7.00,
+        "img": "/img/img.png",
+        "category": "Especial",
+        "flourType": "Harina sin gluten",
+        "ingredients": ["Harina sin gluten", "Agua", "Aceite", "Levadura", "Sal"]
+    },
+    {
+        "id": 13,
+        "name": "Donas de Chocolate",
+        "price": 5.50,
+        "img": "/img/img.png",
+        "category": "Repostería",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Huevo", "Cacao", "Azúcar", "Levadura"]
+    },
+    {
+        "id": 14,
+        "name": "Crackers Salados",
+        "price": 3.20,
+        "img": "/img/img.png",
+        "category": "Snacks",
+        "flourType": "Harina de trigo",
+        "ingredients": ["Harina", "Aceite vegetal", "Sal", "Agua", "Levadura"]
     }
 ]

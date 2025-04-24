@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/productPage.css">
     <link rel="shortcut icon" href="/img/logo.png">
 </head>
 <body>
@@ -26,11 +26,26 @@
                 <ul>
                     <li class="filterOp">
                         Precio
-                        <input type="range" name="" id="">
+                        <input type="range" class="opRange" name="" id="">
                     </li>
+                    <!-- CATEGORÍAS -->
                     <li class="filterOp">Categoria</li>
+                    <ul>
+                        <li><input type="checkbox" class="opCheckbox">Panadería</li>
+                        <li><input type="checkbox" class="opCheckbox">Repostería</li>
+                        <li><input type="checkbox" class="opCheckbox">Galletas</li>
+                        <li><input type="checkbox" class="opCheckbox">Pasteles</li>
+                        <li><input type="checkbox" class="opCheckbox">Tartas</li>
+                        <li><input type="checkbox" class="opCheckbox">Salados</li>
+                    </ul>
+                    <!-- TIPO DE HARINA -->
                     <li class="filterOp">Tipo de harina</li>
-                    <li class="filterOp">Ingredientes</li>
+                    <ul>
+                        <li><input type="checkbox" class="opCheckbox">De trigo</li>
+                        <li><input type="checkbox" class="opCheckbox">Sin gluten</li>
+                        <li><input type="checkbox" class="opCheckbox">De centeno</li>
+                        <li><input type="checkbox" class="opCheckbox">De avena</li>
+                    </ul>
                 </ul>
             </section>
             
