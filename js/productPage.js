@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     cargarComponente("footer", "/components/footer.html")
     // Cargar productos del Json
     renderFetchProducts("")
+
 })
 
 // Eventos de la sección de productos

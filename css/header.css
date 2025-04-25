@@ -26,6 +26,7 @@
 }
 
 .link{
+    display: flex;
     list-style: none;
     font-weight: bolder;
 }
@@ -41,4 +42,67 @@
 .link a:hover{
     background-color: var(--clr-alert);
     color: var(--clr-secondary);
+}
+#shoppingCart{
+    width: 30px;
+    margin: 0 10px 0 10px;
+}
+
+#shoppingCart:hover{
+    cursor: pointer;
+}
+
+#shoppingQuantity{
+    position: relative;
+    scale: 60%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 10px 0 10px;
+    border-radius: 50%;
+    background-color: rgb(207, 83, 83);
+    transform: translateX(-30px) translateY(-15px);
+}
+.shoppingModal{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    height: 90vh;
+}
+.modalContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    height: 90%;
+    background-color: var(--clr-secondary);
+    width: 25rem;
+    margin: 10px 40px 0 0;
+    padding: 20px 10px 20px 10px;
+    /* border: 1px solid var(--clr-alert); */
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+   
+}
+.modalContent{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100%;
+    width: 100%;
+}
+.closeModal{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-style: none;
+    font-size: x-large;
+    font-weight: bold;
+}
+.closeModal:hover{
+    cursor: pointer;
+}
+.hiddenOption{
+    display: none;
 }
