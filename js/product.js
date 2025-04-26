@@ -28,6 +28,10 @@ function modifyQuantity(e){
             break
     }
 }
+function resetQuantity(e){
+    const input = e.target.closest(".container").querySelector("[data-quantity]")  
+    input.value = 1
+}
 
 // Guardar producto en el carrit de compras
 function saveInShoppingCart(id, quantity){

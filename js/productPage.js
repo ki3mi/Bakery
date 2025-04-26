@@ -85,6 +85,7 @@ productSection.addEventListener("click", (e)=>{
         const shopQuantity = document.getElementById("shoppingQuantity")
         shopQuantity.textContent = getElementInLocalStorage(shopCart).length
         shopQuantity.classList.remove("hiddenOption")
+        resetQuantity(e)
     }
 })
 
