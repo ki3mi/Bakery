@@ -4,7 +4,7 @@
         <ul class="options">
             <li class="link"><a href="/index.html">Inicio</a></li>
             <li class="link"><a href="/pages/products.html">Produtos</a></li>
-            <li class="link"><a href="#">Catering</a></li>
+            <!-- <li class="link"><a href="#">Catering</a></li> -->
             <li class="link"><a href="#">Nosotros</a></li>
             <li class="link">
                 <img src="/img/carrito-compras.png" alt="" id="shoppingCart">
@@ -15,10 +15,15 @@
 </nav>
 <div class="shoppingModal displayNoneOption" id="shop-modal">
     <div class="modalContainer">
-       <img src="/img/cerrar.png" alt="" class="closeModal" id="closeModalCart">
-       <div class="modalContent" id="modalContent">
-
+        <img src="/img/cerrar.png" alt="" class="closeModal" id="closeModalCart">
+        <div class="modalContent" id="modalContent">
+            <div class="productInModal" id="">
+                <img src="/img/img.png" alt="" class="imgProduct" data-img>
+                <p data-name>Bizcocho de Vainilla</p>
+                <p data-price style='font-weight: bold;'>S/1500</p>
+                <button class="btn-delete btn-modal">Quitar</button>
+            </div>
         </div>
-        <button class="buyShopCart">Comprar</button>
+        <button class="btn-modal">Comprar</button>
     </div>
 </div>

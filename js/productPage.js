@@ -39,6 +39,7 @@ function renderFetchProducts(filter){
         })
 }
 
+
 // Cargar los componentes
 document.addEventListener("DOMContentLoaded", ()=>{
     cargarComponente("header", "/components/header.html")

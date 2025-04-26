@@ -25,18 +25,31 @@ header.addEventListener("click", (e)=>{
         isModalOpen = !isModalOpen
         if(isModalOpen){
             document.getElementById("shoppingQuantity").classList.add("hiddenOption")
-            let products = ""
             fetch(productUrl)
                 .then(res => res.json())
                 .then(data => {
-                    const elementsInShopCart = getElementInLocalStorage(shopCart)                                    
+                    let elementsInShopCart = getElementInLocalStorage(shopCart)
+
+                    // Filtrando los produtos en funcion a los IDs del localStorage
                     const ids = new Set(elementsInShopCart.map(element => element.id))
                     const productResults = data.filter(element => ids.has(element.id))
-                    console.log(productResults)
+
+                    let finalHtml = ""
+                    elementsInShopCart.sort((a, b) => a.id - b.id) // Ordena la lista de ID/Quantity de forma ascendente
+                                     
+                    productResults.forEach((product, index) => {
+                        const quantity = elementsInShopCart[index].quantity                        
+                        const totalPrice = (product.price * quantity).toFixed(2)
+                        finalHtml += 
+                        "<div class='productInModal' id='"+product.id+"'>"+
+                            "<img src='"+product.img+"' alt='' class='imgProduct' data-img>"+
+                            "<p data-name>("+quantity+")"+product.name+"</p>"+
+                            "<p data-price style='font-weight: bold;'>S/"+totalPrice+"</p>"+
+                            "<button class='btn-delete btn-modal'>Quitar</button>"+
+                        "</div>"
+                    })
+                    document.getElementById("modalContent").innerHTML = finalHtml
                     
-                    // elementsInShopCart.forEach(el => {
-                    //     document.getElementById("modalContent").textContent = "id: " + el.id + " quan: " + el.quantity
-                    // })
                 })
                 .catch(error => console.log("Error al recuperar los datos" + url, error))
             
