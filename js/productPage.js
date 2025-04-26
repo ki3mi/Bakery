@@ -2,8 +2,6 @@ const productSection = document.getElementById("productSection")
 const btnClearSearch = document.getElementById("btn-clearSearch")
 const searchBar = document.getElementById("searchBar")
 
-// Link de  los productos
-const productUrl = "../products.json"
 let products = []
 
 // Unificar el render para que siempre inluya el filtro
@@ -61,7 +59,7 @@ productSection.addEventListener("click", (e)=>{
     if(option.className == "addToCart"){
         // Global(app.js) -> shopCart = "shopCartBakery"
         const container = option.closest(".container")
-        const productId = container.id // ID del producto
+        const productId = Number(container.id) // ID del producto
         let quantity = Number(container.querySelector("[data-quantity]").value)       
         const shopList = getElementInLocalStorage(shopCart)
         const repeated = shopList.filter(el => el.id == productId)

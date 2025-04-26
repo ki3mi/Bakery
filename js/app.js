@@ -1,4 +1,5 @@
 // Variables globales
+const productUrl = "../products.json" // Link de  los productos
 const shopCart = "shopCartBakery" // Nombre del item en el localStorage del carrito de compras
 const header = document.getElementById("header")
 // console.log(header);
@@ -24,10 +25,22 @@ header.addEventListener("click", (e)=>{
         isModalOpen = !isModalOpen
         if(isModalOpen){
             document.getElementById("shoppingQuantity").classList.add("hiddenOption")
-            const elements = getElementInLocalStorage(shopCart)
-            elements.forEach(el => {
-                document.getElementById("modalContent").textContent += "id: " + el.id + " quan: " + el.quantity
-            })
+            let products = ""
+            fetch(productUrl)
+                .then(res => res.json())
+                .then(data => {
+                    const elementsInShopCart = getElementInLocalStorage(shopCart)                                    
+                    const ids = new Set(elementsInShopCart.map(element => element.id))
+                    const productResults = data.filter(element => ids.has(element.id))
+                    console.log(productResults)
+                    
+                    // elementsInShopCart.forEach(el => {
+                    //     document.getElementById("modalContent").textContent = "id: " + el.id + " quan: " + el.quantity
+                    // })
+                })
+                .catch(error => console.log("Error al recuperar los datos" + url, error))
+            
+            
         }
     }
 })
