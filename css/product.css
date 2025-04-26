@@ -13,6 +13,9 @@
 }
 .product img{
     width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .amount{
     display: flex;

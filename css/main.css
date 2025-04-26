@@ -20,21 +20,6 @@
     box-sizing: border-box;
     color: var(--clr);
 }
-body{
-    background-color: var(--clr-bg);
-}
-header{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-footer{
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-/* Animaciones de carga */
 @keyframes fadeInUp {
     from{
         opacity: 0;
@@ -45,6 +30,24 @@ footer{
         transform: translateY(0);
     }
 }
+body{
+    background-color: var(--clr-bg);
+}
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: -3px 11px 51px -19px rgba(17,17,0,0.41);
+    -webkit-box-shadow: -3px 11px 51px -19px rgba(17,17,0,0.41);
+    -moz-box-shadow: -3px 11px 51px -19px rgba(17,17,0,0.41);
+}
+footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+/* Animaciones de carga */
 
 .fade-in{
     animation: fadeInUp 0.6s ease forwards;
@@ -74,65 +77,55 @@ main{
     margin: 1rem;
 }
 /* Slider */
-.slider{
+.banner{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.slider img{
-    height: 30rem;
+.banner img{
+    height: 100%;
     width: 100%;
     object-fit: cover;
     border: 0;
     border-style: none;
-    border-radius: 10px;
     background-color: var(--clr-secondary);
-}
-.btn-slider{
-    position:  absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    padding: 0;
-    border: 0;
-    /* border-radius: 10px; */
-
-}
-.btn-slider img{
-    position: relative;
-    background-color: transparent;
-    filter: invert(0.5);
-    /* border-radius: 10px; */
-    width: 2rem;
-    height: 2rem;
-    z-index: 10;
+    object-fit: cover;
 }
 
-.slider .back{
-    left: 0;
-}
-.slider .next{
-    right: 0;
-    transform: rotate(180deg);
-}
-/* Ofertas */
-.ofertas {
+/* Nosotros */
+
+.aboutMeSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 4rem 2rem 4rem;
+    width: 100%;
 }
-.ofertas #ofertContainer {
+.aboutMe {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2rem;
+    width: 100%;
+}
+.aboutMeText{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 20em;
+    text-align: center;
 }
-.ofertas .titleLine{
+.aboutMeSection img{
+    width: 10rem;
+    transform: rotate(220deg);
+}
+
+
+.titleLine{
     width: 7rem;
     height: 1px;
     border-radius: 1px;

@@ -8,9 +8,9 @@ const ofertContainer = document.getElementById("secOfert")
 document.addEventListener("DOMContentLoaded", () => {
     cargarComponente("header", "components/header.html")
     cargarComponente("footer", "components/footer.html")
-    cargarComponente("ofertContainer", "components/product.html")
-    cargarComponente("ofertContainer", "components/product.html")
-    cargarComponente("ofertContainer", "components/product.html")
+    // cargarComponente("ofertContainer", "components/product.html")
+    // cargarComponente("ofertContainer", "components/product.html")
+    // cargarComponente("ofertContainer", "components/product.html")
     
 })
 

@@ -95,6 +95,7 @@ btnClearSearch.addEventListener("click", ()=>{
     renderFetchProducts("")
 })
 
+
 // Evento para filtrar los datos
 searchBar.addEventListener("input", ()=>{
     const text = searchBar.value.toLowerCase()

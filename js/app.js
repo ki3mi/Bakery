@@ -47,32 +47,6 @@ function loadShopCartContent(){
         .catch(error => console.log("Error al recuperar los datos" + url, error)) 
 }
 
-// CARRITO DE COMPRAS
-let isModalOpen = false
-header.addEventListener("click", (e)=>{
-    if(e.target.id == "closeModalCart" || e.target.id == "shop-modal" || e.target.id == "shoppingCart"){
-        header.children[1].classList.toggle("displayNoneOption")
-        isModalOpen = !isModalOpen
-        if(isModalOpen){
-            document.getElementById("shoppingQuantity").classList.add("hiddenOption")
-            loadShopCartContent()
-        }
-    }
-    if(e.target.id == "btn-delete"){
-        const productId = e.target.closest(".productInModal").id
-        const inLocalStorage = getElementInLocalStorage(shopCart)
-        let id = productId
-        inLocalStorage.forEach((el, index) =>{
-            if(el.id == productId){
-                id = index
-            }
-        })
-        deleteElementInLocalStorage(id, shopCart)
-        loadShopCartContent()
-    }
-})
-
-
 // FUNCIONES DEL LOCAL STORAGE
 // Obtener grupo de elementos del LocalStorage
 function getElementInLocalStorage(group){
@@ -98,4 +72,29 @@ function deleteElementInLocalStorage(id, group){
     elements.splice(id, 1)
     localStorage.setItem(group, JSON.stringify(elements))
 }
+
+// CARRITO DE COMPRAS
+let isModalOpen = false
+header.addEventListener("click", (e)=>{
+    if(e.target.id == "closeModalCart" || e.target.id == "shop-modal" || e.target.id == "shoppingCart"){
+        header.children[1].classList.toggle("displayNoneOption")
+        isModalOpen = !isModalOpen
+        if(isModalOpen){
+            document.getElementById("shoppingQuantity").classList.add("hiddenOption")
+            loadShopCartContent()
+        }
+    }
+    if(e.target.id == "btn-delete"){
+        const productId = e.target.closest(".productInModal").id
+        const inLocalStorage = getElementInLocalStorage(shopCart)
+        let id = productId
+        inLocalStorage.forEach((el, index) =>{
+            if(el.id == productId){
+                id = index
+            }
+        })
+        deleteElementInLocalStorage(id, shopCart)
+        loadShopCartContent()
+    }
+})
 
