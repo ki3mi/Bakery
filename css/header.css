@@ -103,6 +103,9 @@
 .closeModal:hover{
     cursor: pointer;
 }
-.hiddenOption{
+.displayNoneOption{
     display: none;
+}
+.hiddenOption{
+    visibility: hidden;
 }

@@ -28,12 +28,12 @@ function modifyQuantity(e){
             break
     }
 }
-function getProduct(e){
-    const quantity = Number(e.target.closest("div").children[3].textContent)
-    const id = Number(e.target.closest("div").id)
-    const res = {
-        id : id,
-        quantity : quantity
+
+// Guardar producto en el carrit de compras
+function saveInShoppingCart(id, quantity){
+    const element = {
+        "id":id,
+        "quantity":quantity
     }
-    return res
+    storageElementInLocalStorage(element, shopCart)
 }
