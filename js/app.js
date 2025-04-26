@@ -16,6 +16,36 @@ function cargarComponente(id, url){
         .catch(error => console.log("Error al cargar " + url, error))
 }
 
+// Cargar los productos en el shoppingCart
+function loadShopCartContent(){
+    fetch(productUrl)
+        .then(res => res.json())
+        .then(data => {
+            let elementsInShopCart = getElementInLocalStorage(shopCart)
+
+            // Filtrando los produtos en funcion a los IDs del localStorage
+            const ids = new Set(elementsInShopCart.map(element => element.id))
+            const productResults = data.filter(element => ids.has(element.id))
+
+            let finalHtml = ""
+            elementsInShopCart.sort((a, b) => a.id - b.id) // Ordena la lista de ID/Quantity de forma ascendente
+                                     
+            productResults.forEach((product, index) => {
+                const quantity = elementsInShopCart[index].quantity                        
+                const totalPrice = (product.price * quantity).toFixed(2)
+                finalHtml += 
+                "<div class='productInModal' id='"+product.id+"'>"+
+                    "<img src='"+product.img+"' alt='' class='imgProduct' data-img>"+
+                    "<p data-name>("+quantity+")"+product.name+"</p>"+
+                    "<p data-price style='font-weight: bold;'>S/"+totalPrice+"</p>"+
+                    "<button class='btn-delete btn-modal' id='btn-delete'>Quitar</button>"+
+                "</div>"
+            })
+            document.getElementById("modalContent").innerHTML = finalHtml
+                    
+        })
+        .catch(error => console.log("Error al recuperar los datos" + url, error)) 
+}
 
 // CARRITO DE COMPRAS
 let isModalOpen = false
@@ -25,36 +55,20 @@ header.addEventListener("click", (e)=>{
         isModalOpen = !isModalOpen
         if(isModalOpen){
             document.getElementById("shoppingQuantity").classList.add("hiddenOption")
-            fetch(productUrl)
-                .then(res => res.json())
-                .then(data => {
-                    let elementsInShopCart = getElementInLocalStorage(shopCart)
-
-                    // Filtrando los produtos en funcion a los IDs del localStorage
-                    const ids = new Set(elementsInShopCart.map(element => element.id))
-                    const productResults = data.filter(element => ids.has(element.id))
-
-                    let finalHtml = ""
-                    elementsInShopCart.sort((a, b) => a.id - b.id) // Ordena la lista de ID/Quantity de forma ascendente
-                                     
-                    productResults.forEach((product, index) => {
-                        const quantity = elementsInShopCart[index].quantity                        
-                        const totalPrice = (product.price * quantity).toFixed(2)
-                        finalHtml += 
-                        "<div class='productInModal' id='"+product.id+"'>"+
-                            "<img src='"+product.img+"' alt='' class='imgProduct' data-img>"+
-                            "<p data-name>("+quantity+")"+product.name+"</p>"+
-                            "<p data-price style='font-weight: bold;'>S/"+totalPrice+"</p>"+
-                            "<button class='btn-delete btn-modal'>Quitar</button>"+
-                        "</div>"
-                    })
-                    document.getElementById("modalContent").innerHTML = finalHtml
-                    
-                })
-                .catch(error => console.log("Error al recuperar los datos" + url, error))
-            
-            
+            loadShopCartContent()
         }
+    }
+    if(e.target.id == "btn-delete"){
+        const productId = e.target.closest(".productInModal").id
+        const inLocalStorage = getElementInLocalStorage(shopCart)
+        let id = productId
+        inLocalStorage.forEach((el, index) =>{
+            if(el.id == productId){
+                id = index
+            }
+        })
+        deleteElementInLocalStorage(id, shopCart)
+        loadShopCartContent()
     }
 })
 
